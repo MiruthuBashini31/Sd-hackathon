@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <style>
+      .title { font: bold 28px Arial, sans-serif; fill: #1f2937; }
+      .label { font: 18px Arial, sans-serif; fill: #111827; }
+      .small { font: 14px Arial, sans-serif; fill: #374151; }
+      .box { fill: #f3f4f6; stroke: #2563eb; stroke-width: 2; rx: 18; }
+      .service { fill: #e0f2fe; stroke: #0284c7; stroke-width: 2; rx: 18; }
+      .db { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; rx: 18; }
+      .external { fill: #fef3c7; stroke: #d97706; stroke-width: 2; rx: 18; }
+      .arrow { stroke: #475569; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .thin { stroke: #64748b; stroke-width: 2; fill: none; marker-end: url(#arrowheadSmall); }
+      .note { fill: #fff7ed; stroke: #f59e0b; stroke-width: 2; rx: 10; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#475569"/>
+    </marker>
+    <marker id="arrowheadSmall" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <text x="700" y="50" text-anchor="middle" class="title">Low-Level Design: Reservation / Booking System</text>
+
+  <!-- Client Layer -->
+  <rect x="60" y="110" width="220" height="620" class="box"/>
+  <text x="170" y="145" text-anchor="middle" class="label">Client Layer</text>
+
+  <rect x="95" y="180" width="150" height="70" class="service"/>
+  <text x="170" y="220" text-anchor="middle" class="label">Web App</text>
+
+  <rect x="95" y="300" width="150" height="70" class="service"/>
+  <text x="170" y="340" text-anchor="middle" class="label">Mobile App</text>
+
+  <rect x="95" y="420" width="150" height="70" class="service"/>
+  <text x="170" y="460" text-anchor="middle" class="label">Admin Portal</text>
+
+  <!-- API / Gateway -->
+  <rect x="360" y="110" width="250" height="620" class="box"/>
+  <text x="485" y="145" text-anchor="middle" class="label">API Gateway / Edge</text>
+
+  <rect x="395" y="190" width="180" height="90" class="service"/>
+  <text x="485" y="230" text-anchor="middle" class="label">Authentication</text>
+  <text x="485" y="252" text-anchor="middle" class="small">JWT / Session</text>
+
+  <rect x="395" y="305" width="180" height="90" class="service"/>
+  <text x="485" y="345" text-anchor="middle" class="label">API Router</text>
+  <text x="485" y="367" text-anchor="middle" class="small">REST / HTTP</text>
+
+  <rect x="395" y="420" width="180" height="90" class="service"/>
+  <text x="485" y="460" text-anchor="middle" class="label">Rate Limiting</text>
+  <text x="485" y="482" text-anchor="middle" class="small">Throttle / ACL</text>
+
+  <!-- Application Layer -->
+  <rect x="690" y="110" width="320" height="620" class="box"/>
+  <text x="850" y="145" text-anchor="middle" class="label">Application Services</text>
+
+  <rect x="720" y="180" width="260" height="80" class="service"/>
+  <text x="850" y="215" text-anchor="middle" class="label">User Service</text>
+  <text x="850" y="235" text-anchor="middle" class="small">Profile, Login, Roles</text>
+
+  <rect x="720" y="285" width="260" height="80" class="service"/>
+  <text x="850" y="320" text-anchor="middle" class="label">Reservation Service</text>
+  <text x="850" y="340" text-anchor="middle" class="small">Create / Confirm / Cancel</text>
+
+  <rect x="720" y="390" width="260" height="80" class="service"/>
+  <text x="850" y="425" text-anchor="middle" class="label">Payment Service</text>
+  <text x="850" y="445" text-anchor="middle" class="small">Checkout / Ledger</text>
+
+  <rect x="720" y="495" width="260" height="80" class="service"/>
+  <text x="850" y="530" text-anchor="middle" class="label">Notification Service</text>
+  <text x="850" y="550" text-anchor="middle" class="small">Email / SMS / Push</text>
+
+  <!-- Data Layer -->
+  <rect x="1080" y="110" width="250" height="620" class="box"/>
+  <text x="1205" y="145" text-anchor="middle" class="label">Data Layer</text>
+
+  <rect x="1115" y="190" width="180" height="140" class="db"/>
+  <text x="1205" y="230" text-anchor="middle" class="label">Primary DB</text>
+  <text x="1205" y="255" text-anchor="middle" class="small">Users</text>
+  <text x="1205" y="275" text-anchor="middle" class="small">Reservations</text>
+  <text x="1205" y="295" text-anchor="middle" class="small">Payments</text>
+
+  <rect x="1115" y="370" width="180" height="110" class="db"/>
+  <text x="1205" y="410" text-anchor="middle" class="label">Cache</text>
+  <text x="1205" y="435" text-anchor="middle" class="small">Redis</text>
+  <text x="1205" y="455" text-anchor="middle" class="small">Session and Query</text>
+
+  <rect x="1115" y="515" width="180" height="130" class="external"/>
+  <text x="1205" y="555" text-anchor="middle" class="label">External APIs</text>
+  <text x="1205" y="580" text-anchor="middle" class="small">SMS / Email</text>
+  <text x="1205" y="600" text-anchor="middle" class="small">Payment Gateway</text>
+
+  <!-- Arrows -->
+  <path d="M 280 215 L 360 215" class="arrow"/>
+  <path d="M 280 335 L 360 335" class="arrow"/>
+  <path d="M 280 455 L 360 455" class="arrow"/>
+
+  <path d="M 610 235 L 690 235" class="arrow"/>
+  <path d="M 610 350 L 690 350" class="arrow"/>
+  <path d="M 610 465 L 690 465" class="arrow"/>
+
+  <path d="M 980 220 L 1115 220" class="arrow"/>
+  <path d="M 980 330 L 1115 330" class="arrow"/>
+  <path d="M 980 430 L 1115 430" class="arrow"/>
+  <path d="M 980 540 L 1115 540" class="arrow"/>
+
+  <!-- Internal service interactions -->
+  <path d="M 850 260 L 850 285" class="thin"/>
+  <path d="M 850 365 L 850 390" class="thin"/>
+  <path d="M 850 470 L 850 495" class="thin"/>
+
+  <!-- Notes -->
+  <rect x="390" y="760" width="620" height="80" class="note"/>
+  <text x="700" y="790" text-anchor="middle" class="label">Flow:</text>
+  <text x="700" y="812" text-anchor="middle" class="small">Client → API Gateway → Application Services → Database/Cache/External Integrations</text>
+</svg>
